@@ -7,6 +7,8 @@ import {
 	HStack,
 	Button,
 	useToast,
+	Avatar,
+	AvatarBadge,
 } from '@chakra-ui/react';
 
 export default function Navbar() {
@@ -29,9 +31,13 @@ export default function Navbar() {
 			<Spacer />
 
 			<HStack spacing='20px'>
-				<Box bg='gray.200' p='10px'>
-					M
-				</Box>
+				<Avatar src='/img/mario.png'>
+					<AvatarBadge width='1.3em' bg='teal.500'>
+						<Text fontSize='xs' color='white'>
+							5
+						</Text>
+					</AvatarBadge>
+				</Avatar>
 				<Text>Mario@email.com</Text>
 				<Button colorScheme='green' onClick={showToast}>
 					Logout
