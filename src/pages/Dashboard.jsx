@@ -61,7 +61,7 @@ export default function Dashboard() {
 }
 
 export const taskLoader = async () => {
-	const res = await fetch('data/db.json');
+	const res = await fetch('../../data/db.json');
 	const json_res = await res.json();
 
 	return json_res;
