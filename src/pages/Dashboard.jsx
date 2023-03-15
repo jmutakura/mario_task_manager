@@ -18,11 +18,12 @@ import { useLoaderData } from 'react-router-dom';
 
 export default function Dashboard() {
 	const tasks = useLoaderData();
+	console.log(tasks);
 
 	return (
 		<SimpleGrid spacing={10} minChildWidth={300}>
 			{tasks &&
-				tasks.map((task) => (
+				tasks['tasks'].map((task) => (
 					<Card
 						key={task.id}
 						borderTop='8px'
@@ -60,7 +61,8 @@ export default function Dashboard() {
 }
 
 export const taskLoader = async () => {
-	const res = await fetch('http://localhost:3000/tasks');
+	const res = await fetch('data/db.json');
+	const json_res = await res.json();
 
-	return res.json();
+	return json_res;
 };
